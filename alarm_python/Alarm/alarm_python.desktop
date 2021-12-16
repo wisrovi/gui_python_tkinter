@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Alarm+Python
+Icon=/opt/alarm_python/icon_aplication.png 
+Exec=python3 /opt/alarm_python/alarma.py
+Comment=Alarma con python
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=alarm_python

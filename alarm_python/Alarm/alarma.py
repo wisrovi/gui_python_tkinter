@@ -18,13 +18,13 @@ lista_minutos = []
 lista_segundos = []
 
 for  i in range(0,24):
-	lista_horas.append(i)
+    lista_horas.append(i)
 
 for  i in range(0,60):
-	lista_minutos.append(i)
+    lista_minutos.append(i)
 
 for  i in range(0,60):
-	lista_segundos.append(i)
+    lista_segundos.append(i)
 
 
 texto1 = Label(ventana, text= 'Hora', bg= 'black', fg= 'magenta', font= ('Arial',12, 'bold'))
@@ -72,30 +72,30 @@ cantidad.current(0)
 
 
 def obtener_tiempo():
-	x_hora = combobox1.get()
-	x_minutos = combobox2.get()
-	x_segundos = combobox3.get()
+    x_hora = combobox1.get()
+    x_minutos = combobox2.get()
+    x_segundos = combobox3.get()
 
-	hora =  strftime('%H')
-	minutos = strftime('%M')
-	segundos = strftime('%S')
+    hora =  strftime('%H')
+    minutos = strftime('%M')
+    segundos = strftime('%S')
 
-	hora_total = (hora + ' : '+ minutos+ ' : '+ segundos)
-	texto_hora.config(text=hora_total, font = ('Radioland', 25))
+    hora_total = (hora + ' : '+ minutos+ ' : '+ segundos)
+    texto_hora.config(text=hora_total, font = ('Radioland', 25))
 
 
-	hora_alarma = x_hora +' : '+ x_minutos +' : '+ x_segundos
-	alarma['text']= hora_alarma
+    hora_alarma = x_hora +' : '+ x_minutos +' : '+ x_segundos
+    alarma['text']= hora_alarma
 
-	#condicion:
-	if int(hora) == int(x_hora):
-		if int(minutos) == int(x_minutos):
-			if int(segundos) == int(x_segundos):								
-				mixer.music.load("audio.mp3")
-				mixer.music.play(loops= int(cantidad.get()))
-				messagebox.showinfo(message=hora_alarma, title="Alarma")
+    #condicion:
+    if int(hora) == int(x_hora):
+        if int(minutos) == int(x_minutos):
+            if int(segundos) == int(x_segundos):                                
+                mixer.music.load("/opt/alarm_python/audio.mp3")
+                mixer.music.play(loops= int(cantidad.get()))
+                messagebox.showinfo(message=hora_alarma, title="Alarma")
 
-	texto_hora.after(100, obtener_tiempo)
+    texto_hora.after(100, obtener_tiempo)
 
 
 texto_hora = Label(ventana,  fg = 'green2', bg='black')
